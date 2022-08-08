@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import'slick-slider/slick/slick-theme';
+@import'slick-slider/slick/slick';
+
+@import './font';
+
+body{
+    font-family: 'Futura';
+    @apply text-primary;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'EB Garamond' ;
+}
+.font-heading{
+    font-family: 'EB Garamond';
+}
+a{
+    display: inline-block;
+}
+.overflow-slider{
+    overflow: hidden;
+    .slick-list {
+        overflow: visible;
+    }
+}
+.overflow{
+    overflow: hidden;
+}
+.active{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+}
+
+
+// banner
+.slick-height{
+    .slick-list {
+        height: 100%;
+        .slick-track {
+            height: 100%;
+            div{
+                height: 100%;
+                .slider-btn{
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+// slick css
+.main-slider{
+    .slick-dots {
+        top: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: auto;
+        right: 0;
+        .slick-dots li button:before {
+            content: '';
+            display: none;
+        }
+        li{
+           
+        }
+        li button{
+            content: '';
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            transition: all 0.5s ease;
+            opacity: 0.5;
+            padding: 0;
+            transform: rotate(90deg);
+        }
+        .slick-active button    {
+            background-color: #ffffff;
+            opacity: 1;
+        }
+    }
+}
+
+
+// fixed Header
+nav {
+    transition : all 0.5s ease-in-out;
+    .icon{
+        color: #fff;
+        @media screen and(max-width:1023px) {
+            color:#1E4243 !important;
+        }
+        .logo{
+            width: 116px;
+            @media screen and(max-width:767px) {
+                width: 100px;
+            }
+        }
+    }
+}
+    
+body .newClass{
+   @apply py-4;
+    background-color: #ffffff;
+    transition : all 0.5s ease-in-out;
+    .icon, ul li{
+       @apply text-primary;
+    }
+    .logo{
+        width: 100px;
+        @media screen and(max-width:767px) {
+            width: 90px;
+        }
+    }
+    
+    .mega-body{
+        position: absolute;
+        width: 100%;
+        right: auto;
+    }
+}
+// mega menu
+
+.mega-body{
+    &.active{
+        opacity: 1;
+        visibility: visible;
+        background-color: #fff;
+        transition: all .5s ease-in-out;
+    }
+    top: 80px; 
+    .mega-item{
+        background-color: #fff;
+    }
+}
+
+
+//card slider
+.card_banner{
+    .slick-slide {
+        padding: 10px;
+        .slick-cloned {
+            opacity: 0;
+        }
+    }
+}
+.latest_banner .slick-slide {
+    padding: 7px;
+}
+
+    .testimonials{
+        .slick-arrow{
+            width: 36px;
+            top: calc(100% + 70px);
+            @media screen and (max-width:767px)  {
+                top: calc(100% + 50px);
+            }
+            &:before{
+                @apply hidden;
+            }
+            &.slick-prev {
+                left: 50%;
+                transform: translateX(-120%);
+            } 
+            &.slick-next {
+               right: 50%;
+               transform: translateX(120%);
+            }  
+            &.slick-disabled{
+                @apply opacity-50;
+            }
+        }
+        
+    }
+    .news-card{
+        .slick-slide{
+            // padding: 4px;
+        }
+        .slick-slider {
+            position: static;
+        }
+        
+        .slick-arrow{
+            width: 40px;
+            top: 30px;
+            @media screen and (max-width:767px)  {
+                top: calc(100% + 30px);
+            }
+            &:before{
+                @apply hidden;
+            }
+            &.slick-prev {
+                left: calc(100% - 100px);
+                z-index: 99;
+                @media screen and (max-width:767px)  {
+                    left: calc(50% - 40px);
+                }
+            }
+            &.slick-next {
+                left: auto;
+                right: 0;
+                @media screen and (max-width:767px)  {
+                    left: 50%;
+                }
+            }
+            &.slick-disabled{
+                @apply opacity-50;
+            }
+            
+        }
+    }
+
+// About Us
+// Our Work
+.bg-slider{
+    background-image: linear-gradient(#f8f8f8 50%, #1E4243 50%);
+}
+.show-modal{
+    transform: translate(-50%, -50%);
+}
+// what we offer
+.slider-banner{
+    .slick-arrow{
+        width: 36px;
+        top: calc(70% + 70px);
+        &:before{
+            @apply hidden;
+        }
+        &.slick-prev {
+            left: 58%;
+            transform: translateX(-110%);
+            z-index: 99;
+        } 
+        &.slick-next {
+           right: 40%;
+           transform: translateX(110%);
+        } 
+        &.slick-disabled{
+            @apply opacity-50;
+        }
+    }
+}
+.nav li.active{
+    background-color: red;
+}
+
+  .text-show.active{
+    height: auto;
+   
+  }
+  .read-more.active{
+    display: none;
+  }
+  .read-less.active{
+    display: block;
+  }
